@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+        <nav>
+            <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+            <a href="#" onclick="showPage('reports')">Reports</a>
+            <a href="#" onclick="showPage('transactions')">Transactions</a>
+            <a href="#" id="maintenanceLink" onclick="showPage('maintenance')" style="display: none;">Maintenance</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login" class="page active">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="role">Role:</label>
+                <select id="role" required>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="dashboard" class="page">
+            <h2>Dashboard</h2>
+            <p>Welcome to the Library Management System!</p>
+        </section>
+
+        <section id="reports" class="page">
+            <h2>Reports</h2>
+            <p>Reports module accessible by Admin and User.</p>
+        </section>
+
+        <section id="transactions" class="page">
+            <h2>Transactions</h2>
+            <p>Transactions module accessible by Admin and User.</p>
+        </section>
+
+        <section id="maintenance" class="page">
+            <h2>Maintenance</h2>
+            <div>
+                <h3>Add Membership</h3>
+                <form id="addMembershipForm">
+                    <label for="membershipName">Name:</label>
+                    <input type="text" id="membershipName" placeholder="Enter name" required>
+                    
+                    <label for="membershipDuration">Membership Duration:</label>
+                    <input type="radio" name="duration" value="6months" checked> 6 Months
+                    <input type="radio" name="duration" value="1year"> 1 Year
+                    <input type="radio" name="duration" value="2years"> 2 Years
+
+                    <button type="submit">Add Membership</button>
+                </form>
+            </div>
+            <div>
+                <h3>Update Membership</h3>
+                <form id="updateMembershipForm">
+                    <label for="membershipNumber">Membership Number:</label>
+                    <input type="text" id="membershipNumber" placeholder="Enter membership number" required>
+
+                    <label for="extendMembership">Extend Membership:</label>
+                    <input type="checkbox" id="extendMembership"> Yes
+
+                    <button type="submit">Update Membership</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Library Management System © 2024</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
